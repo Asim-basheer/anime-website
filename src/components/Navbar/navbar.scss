@@ -1,0 +1,57 @@
+@import "../../style/main.scss";
+
+header {
+  text-transform: capitalize;
+  .container {
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      .logo {
+        a {
+          font-weight: 800;
+          font-size: 2rem;
+          color: $blue;
+          transition: $transition;
+          &:hover {
+            color: rgba($color: $blue, $alpha: 0.8);
+          }
+        }
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transform: translateY(3px);
+        .nav-link {
+          font-weight: 700;
+          opacity: 0.8;
+          transition: $transition;
+          font-size: 1.2rem;
+          &:hover {
+            opacity: 1;
+          }
+          &.active {
+            color: $blue;
+            opacity: 1;
+          }
+        }
+      }
+
+      .user {
+        transform: translateY(6px);
+        .navbar-icon-container {
+          font-size: 1.7rem;
+          transition: $transition;
+          cursor: pointer;
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

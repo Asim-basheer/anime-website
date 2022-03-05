@@ -1,0 +1,37 @@
+@import "../../style/main.scss";
+@import url("https://fonts.googleapis.com/css2?family=Orelega+One&display=swap");
+
+.pagination {
+  font-family: "Orelega One", cursive;
+  width: fit-content;
+  display: flex;
+  gap: 0.2rem;
+  .arrow-pagination-next,
+  .arrow-pagination-previous,
+  .number-of-pages span {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: $light-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: $transition;
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+  .number-of-pages {
+    display: flex;
+    gap: 0.2rem;
+    span {
+      &.active {
+        color: $blue;
+        opacity: 1;
+      }
+    }
+  }
+}
