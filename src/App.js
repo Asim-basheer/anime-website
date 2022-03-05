@@ -15,6 +15,7 @@ import "./style/main.scss";
 import "./style/global-rules.scss";
 
 function App() {
+  // comment to test github
   return (
     <>
       <Navbar />
