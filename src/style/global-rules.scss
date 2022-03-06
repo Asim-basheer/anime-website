@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import "./variables.scss";
 
 * {
@@ -13,7 +13,8 @@ html {
 body {
   background-color: $dark;
   color: $white;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Orelega One", cursive;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -28,7 +29,7 @@ ul {
 // container
 
 button {
-  background: transparent;
+  background-color: transparent;
   border: none;
 }
 .btn {
@@ -39,6 +40,17 @@ button {
   &:hover {
     opacity: 0.8;
   }
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $white !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .container {

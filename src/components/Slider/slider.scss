@@ -31,12 +31,29 @@
     .slider-heading {
       max-width: 400px;
       margin-bottom: 1rem;
+      @media (max-width: $sm) {
+        & {
+          margin: auto;
+        }
+      }
+      @media (max-width: $md) {
+        & {
+          margin: auto;
+        }
+      }
       h1 {
         font-size: 2.5rem;
         font-weight: 900;
         color: white;
         line-height: 1;
         margin-bottom: 1rem;
+        @media (max-width: $sm) {
+          & {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+          }
+        }
         span {
           font-size: 1.5rem;
           color: #eee;
@@ -46,18 +63,36 @@
         line-height: 1.5;
         margin-bottom: 1rem;
         font-size: 1.1rem;
+        @media (max-width: $sm) {
+          & {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+          }
+        }
       }
       .btn-watch {
         padding: 10px 32px;
         font-weight: 700;
         font-size: 1.1rem;
         display: inline-block;
+        @media (max-width: $sm) {
+          & {
+            font-size: 1rem;
+          }
+        }
+        @media (min-width: calc(768px)) and (max-width: $md) {
+          display: block;
+          text-align: center;
+        }
       }
     }
     .slider-anime-img {
       overflow: hidden;
       border-radius: 16px;
-      img {
+      @media (max-width: $md) {
+        & {
+          display: none;
+        }
       }
     }
   }
@@ -79,6 +114,12 @@
         display: block;
         cursor: pointer;
         position: relative;
+        @media (max-width: $sm) {
+          & {
+            width: 15px;
+            height: 15px;
+          }
+        }
         &:hover::before:not(&.active) {
           opacity: 1;
         }
@@ -107,7 +148,13 @@
       transform: translateY(-50%);
       height: fit-content;
       width: fit-content;
-      .arrow-next {
+      @media (max-width: $sm) {
+        & {
+          right: 10px;
+        }
+      }
+      .arrow-next,
+      .arrow-previous {
         width: 35px;
         height: 35px;
         border-radius: 8px;
@@ -119,26 +166,21 @@
         font-size: 25px;
         margin-bottom: 0.5rem;
         transition: $transition;
+        @media (max-width: $sm) {
+          & {
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+          }
+        }
         &:hover {
           opacity: 0.8;
           cursor: pointer;
         }
       }
+      .arrow-next {
+      }
       .arrow-previous {
-        width: 35px;
-        height: 35px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $dark;
-        color: $blue;
-        font-size: 25px;
-        transition: $transition;
-        &:hover {
-          opacity: 0.8;
-          cursor: pointer;
-        }
       }
     }
   }

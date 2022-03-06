@@ -8,12 +8,18 @@ header {
       align-items: center;
       justify-content: space-between;
       height: 80px;
+      position: relative;
       .logo {
         a {
           font-weight: 800;
           font-size: 2rem;
           color: $blue;
           transition: $transition;
+          @media (max-width: $md) {
+            & {
+              font-size: 1.5rem;
+            }
+          }
           &:hover {
             color: rgba($color: $blue, $alpha: 0.8);
           }
@@ -26,6 +32,26 @@ header {
         align-items: center;
         gap: 1.5rem;
         transform: translateY(3px);
+        @media (max-width: $md) {
+          & {
+            transition: $transition;
+            position: absolute;
+            left: 0;
+            flex-direction: column;
+            width: 100%;
+            background: #1f1f1f;
+            padding: 2rem;
+            top: 90px;
+            opacity: 0;
+            z-index: 1000;
+            visibility: hidden;
+            &.active {
+              opacity: 1;
+              top: 80px;
+              visibility: visible;
+            }
+          }
+        }
         .nav-link {
           font-weight: 700;
           opacity: 0.8;
@@ -43,12 +69,30 @@ header {
 
       .user {
         transform: translateY(6px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        @media (max-width: $md) {
+          transform: translateY(4px);
+        }
         .navbar-icon-container {
           font-size: 1.7rem;
           transition: $transition;
           cursor: pointer;
           &:hover {
             color: $blue;
+          }
+        }
+        .toggle {
+          font-size: 2rem;
+          color: $white;
+          cursor: pointer;
+          display: none;
+          @media (max-width: $md) {
+            & {
+              display: block;
+            }
           }
         }
       }

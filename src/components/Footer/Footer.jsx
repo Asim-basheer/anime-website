@@ -8,6 +8,7 @@ function Footer() {
   const yearDate = new Date().getFullYear();
   return (
     <footer>
+      <div className="scroll-to" id="scroll-to"></div>
       <div className="container">
         <div className="copyright">
           <h2>
@@ -17,7 +18,7 @@ function Footer() {
             All rights reserved
           </h2>
         </div>
-        <a href="#logo" className="scroll-top">
+        <a href="#scroll-to" className="scroll-top">
           <IoIosArrowUp />
         </a>
         <div className="developer-name">

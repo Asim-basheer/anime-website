@@ -3,12 +3,25 @@
 footer {
   background-color: $light-dark;
   font-weight: 400;
+  .scroll-to {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
   .container {
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
+    @media (max-width: $md) {
+      & {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        padding: 4rem 0;
+      }
+    }
     .copyright {
       h2 {
         font-size: 1rem;

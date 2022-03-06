@@ -33,20 +33,25 @@
   .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 0.5rem 1rem;
+    gap: 0.7rem 1rem;
     @media (max-width: $sm) {
       & {
         gap: 1rem;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(calc(150px - 1rem), 1fr)
+        );
       }
     }
     .cards-img-container {
       overflow: hidden;
-      border-radius: 16px;
+      border-radius: 36px;
       position: relative;
       img {
         width: 100%;
         max-width: 100%;
         object-fit: cover;
+        border-radius: 36px;
       }
       .numbers {
         @include glass-card-effect;
@@ -58,6 +63,11 @@
         border-radius: 50px;
         font-weight: 500;
         font-size: 0.9rem;
+        @media (max-width: $sm) {
+          & {
+            font-size: 0.7rem;
+          }
+        }
       }
       .cards-content {
         position: absolute;
@@ -66,7 +76,7 @@
         z-index: 1;
         left: 0;
         bottom: 0;
-        border-radius: 16px;
+        border-radius: 36px;
         padding: 0.5rem;
         text-align: center;
         @include glass-card-effect;
@@ -74,32 +84,34 @@
           font-weight: 400;
           margin-bottom: 0.5rem;
           font-size: 0.9rem;
+          @media (max-width: $sm) {
+            font-size: 0.7rem;
+          }
         }
         .cards-icon {
           display: flex;
           justify-content: center;
           align-items: center;
           gap: 0.7rem;
-          .cards-play-icon {
+          .cards-play-icon,
+          .cards-favorite-icon {
             width: fit-content;
             font-size: 2rem;
-            color: $blue;
             transition: $transition;
+            @media (max-width: $sm) {
+              font-size: 1.5rem;
+            }
             &:hover {
               opacity: 0.8;
               cursor: pointer;
             }
           }
+          .cards-play-icon {
+            color: $blue;
+          }
           .cards-favorite-icon {
-            width: fit-content;
-            font-size: 2rem;
             color: $red;
-            transition: $transition;
             transform: translateY(3px);
-            &:hover {
-              opacity: 0.8;
-              cursor: pointer;
-            }
           }
         }
       }

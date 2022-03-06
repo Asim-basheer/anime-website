@@ -1,8 +1,8 @@
 @import "../../style/main.scss";
 
 .search {
-  min-height: calc(100vh - 224px);
-  margin-top: 4rem;
+  min-height: calc(100vh - 192px);
+  margin-top: 2rem;
   .search-box {
     position: relative;
     height: 50px;
@@ -19,8 +19,10 @@
       padding: 0 50px;
       font-size: 1.2rem;
       color: white;
+      transition: $transition;
       &:focus {
         outline: none;
+        transform: scaleY(1.1);
         @include main-box-shadow;
       }
       &:focus::placeholder {
