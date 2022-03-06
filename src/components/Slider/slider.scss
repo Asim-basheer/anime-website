@@ -105,7 +105,13 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
+      align-items: center;
       gap: 10px;
+      @media (max-width: $md) {
+        & {
+          bottom: 10px;
+        }
+      }
       span {
         width: 20px;
         height: 20px;
@@ -177,10 +183,6 @@
           opacity: 0.8;
           cursor: pointer;
         }
-      }
-      .arrow-next {
-      }
-      .arrow-previous {
       }
     }
   }

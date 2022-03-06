@@ -2,8 +2,6 @@ import "./forms.scss";
 import { Form, Formik } from "formik";
 import * as yup from "yup";
 import FormikControl from "./Form/FormikControl";
-import { FaFacebookF } from "react-icons/fa";
-import { AiOutlineGooglePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 // import FormImg from "../../images/login&register.jpg";

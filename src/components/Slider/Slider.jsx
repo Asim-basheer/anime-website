@@ -9,7 +9,7 @@ function Slider() {
       className="slider"
       style={{
         backgroundImage:
-          "url(https://www14.0zz0.com/2022/03/04/02/278269537.jpg)",
+          "url(https://www13.0zz0.com/2022/03/06/02/700270706.jpg)",
       }}
     >
       <div className="slider-content">

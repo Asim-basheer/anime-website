@@ -14,8 +14,9 @@
   @media (max-width: $md) {
     & {
       max-width: 400px;
-      margin: 4rem auto;
+      margin: 2rem auto 4rem auto;
       backdrop-filter: none;
+      height: calc(100vh - 305px);
     }
   }
   .form-img {
@@ -50,7 +51,7 @@
     padding: 3.5rem;
     @media (max-width: $md) {
       & {
-        padding: 2rem;
+        padding: 1.5rem;
       }
     }
     .content {
