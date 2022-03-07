@@ -1,13 +1,6 @@
 @import "../../style/main.scss";
 
 .search {
-  min-height: calc(100vh - 192px);
-  margin-top: 2rem;
-  @media (max-width: $md) {
-    & {
-      min-height: calc(100vh - 240px);
-    }
-  }
   .search-box {
     position: relative;
     height: 50px;

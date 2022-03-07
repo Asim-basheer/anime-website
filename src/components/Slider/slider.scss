@@ -7,8 +7,8 @@
   z-index: 1;
   border-radius: 16px;
   overflow: hidden;
+  margin-bottom: 4rem;
   @include main-box-shadow();
-  margin: 2rem 0;
   .slider-content {
     position: absolute;
     display: flex;

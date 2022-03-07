@@ -117,3 +117,9 @@ input:-webkit-autofill:active {
     }
   }
 }
+
+.fixed-height {
+  min-height: calc(100vh - 256px);
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}

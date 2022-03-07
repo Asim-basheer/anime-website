@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { Field } from "formik";
 
 function RadioButtons({ label, name, options, ...rest }) {
@@ -9,7 +9,7 @@ function RadioButtons({ label, name, options, ...rest }) {
         {({ field }) => {
           return options.map((option) => {
             return (
-              <React.Fragment key={option.value}>
+              <Fragment key={option.value}>
                 <input
                   type="radio"
                   id={option.value}
@@ -18,7 +18,7 @@ function RadioButtons({ label, name, options, ...rest }) {
                   value={option.value}
                 />
                 <label htmlFor={option.value}>{option.key}</label>
-              </React.Fragment>
+              </Fragment>
             );
           });
         }}

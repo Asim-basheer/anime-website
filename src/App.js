@@ -117,52 +117,54 @@ function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="" element={<Home data={data} />} />
-        <Route
-          path="topanime"
-          element={
-            <Suspense fallback="loading...">
-              <TopAnime data={data} />
-            </Suspense>
-          }
-        />
-        <Route
-          path="lastupdates"
-          element={
-            <Suspense fallback="loading">
-              <LastUpdates data={data} />
-            </Suspense>
-          }
-        />
-        <Route
-          path="episodes"
-          element={
-            <Suspense fallback="loading">
-              <Episodes data={data} />
-            </Suspense>
-          }
-        />
-        <Route
-          path="allanime"
-          element={
-            <Suspense fallback="loading">
-              <AllAnime data={data} />
-            </Suspense>
-          }
-        />
-        <Route path="search" element={<Search />} />
-        <Route path="signin" element={<SignIn />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route
-          path="anime-website"
-          element={
-            <div className="go-to-page">
-              <Link to={"/"}>go to home page</Link>
-            </div>
-          }
-        />
-      </Routes>
+      <section className="fixed-height">
+        <Routes>
+          <Route path="" element={<Home data={data} />} />
+          <Route
+            path="topanime"
+            element={
+              <Suspense fallback="loading...">
+                <TopAnime data={data} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="lastupdates"
+            element={
+              <Suspense fallback="loading">
+                <LastUpdates data={data} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="episodes"
+            element={
+              <Suspense fallback="loading">
+                <Episodes data={data} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="allanime"
+            element={
+              <Suspense fallback="loading">
+                <AllAnime data={data} />
+              </Suspense>
+            }
+          />
+          <Route path="search" element={<Search />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route
+            path="anime-website"
+            element={
+              <div className="go-to-page">
+                <Link to={"/"}>go to home page</Link>
+              </div>
+            }
+          />
+        </Routes>
+      </section>
       <Footer />
     </>
   );

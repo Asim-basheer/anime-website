@@ -34,6 +34,7 @@ function Navbar() {
 
   return (
     <header>
+      <div className="scroll-to" id="scroll-to"></div>
       <div className="container">
         <nav className="navbar">
           <div className="logo">

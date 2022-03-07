@@ -1,4 +1,3 @@
-import React from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import { RiCopyrightFill } from "react-icons/ri";
 import { BsFillSuitHeartFill } from "react-icons/bs";
@@ -8,7 +7,6 @@ function Footer() {
   const yearDate = new Date().getFullYear();
   return (
     <footer>
-      <div className="scroll-to" id="scroll-to"></div>
       <div className="container">
         <div className="copyright">
           <h2>

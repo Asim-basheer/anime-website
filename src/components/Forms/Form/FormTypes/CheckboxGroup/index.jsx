@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { Field, ErrorMessage } from "formik";
 import IconError from "../IconError";
 
@@ -9,7 +9,7 @@ function CheckboxGroup({ name, options, ...rest }) {
         {({ field }) => {
           return options.map((option) => {
             return (
-              <React.Fragment key={option.value}>
+              <Fragment key={option.value}>
                 <input
                   type="checkbox"
                   id={option.value}
@@ -17,7 +17,7 @@ function CheckboxGroup({ name, options, ...rest }) {
                   {...field}
                   value={option.value}
                 />
-              </React.Fragment>
+              </Fragment>
             );
           });
         }}
