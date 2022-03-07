@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { SliderData } from "./SliderData";
 import "./slider.scss";
 function Slider() {
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(0);
 
   const nextAnime = () => {
     setCurrent(current === SliderData.length - 1 ? 0 : current + 1);
@@ -18,7 +18,13 @@ function Slider() {
     setCurrent(index);
   };
 
-  setInterval(() => {}, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent(current === SliderData.length - 1 ? 0 : current + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [setCurrent, current]);
+
   return (
     <div className="slider">
       {SliderData.map((data, index) => {

@@ -213,13 +213,6 @@
 
 @keyframes sliderANimation {
   0% {
-    // transform: translateX(-100%);
-    transform: rotateX(90deg);
-  }
-  // 50% {
-  // }
-  100% {
-    transform: rotateX(0deg);
-    // transform: translateX(0%);
+    transform: translateX(-20%);
   }
 }

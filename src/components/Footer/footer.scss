@@ -3,6 +3,9 @@
 footer {
   background-color: $light-dark;
   font-weight: 400;
+  position: absolute;
+  left: 0;
+  width: 100%;
   .scroll-to {
     position: absolute;
     left: 0;
