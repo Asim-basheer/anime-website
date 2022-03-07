@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { Navbar, Home, Footer, Search, SignIn, SignUp } from "./components";
 import "./style/main.scss";
@@ -154,6 +154,14 @@ function App() {
         <Route path="search" element={<Search />} />
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
+        <Route
+          path="anime-website"
+          element={
+            <div className="go-to-page">
+              <Link to={"/"}>go to home page</Link>
+            </div>
+          }
+        />
       </Routes>
       <Footer />
     </>
