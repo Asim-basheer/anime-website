@@ -9,6 +9,7 @@ import {
   SignIn,
   SignUp,
   Details,
+  Loading,
 } from "./components";
 import "./style/main.scss";
 import "./style/global-rules.scss";
@@ -30,7 +31,7 @@ function App() {
           <Route
             path="topanime"
             element={
-              <Suspense fallback="loading...">
+              <Suspense fallback={<Loading />}>
                 <TopAnime data={animeData} />
               </Suspense>
             }
@@ -38,7 +39,7 @@ function App() {
           <Route
             path="lastupdates"
             element={
-              <Suspense fallback="loading">
+              <Suspense fallback={<Loading />}>
                 <LastUpdates data={animeData} />
               </Suspense>
             }
@@ -46,7 +47,7 @@ function App() {
           <Route
             path="episodes"
             element={
-              <Suspense fallback="loading">
+              <Suspense fallback={<Loading />}>
                 <Episodes data={animeData} />
               </Suspense>
             }
@@ -54,7 +55,7 @@ function App() {
           <Route
             path="allanime"
             element={
-              <Suspense fallback="loading">
+              <Suspense fallback={<Loading />}>
                 <AllAnime data={animeData} />
               </Suspense>
             }
@@ -62,6 +63,7 @@ function App() {
           <Route path="search" element={<Search />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="signup" element={<SignUp />} />
+          <Route path="*" element={<Loading />} />
           <Route path="details/:id" element={<Details data={animeData} />} />
           <Route
             path="anime-website"

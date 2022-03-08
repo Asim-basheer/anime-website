@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./cards.scss";
 import { BsPlayCircleFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
@@ -12,20 +11,6 @@ function Cards({
   numberOfEpisodes = "",
   favorite = false,
 }) {
-  const [favoriteStatus, setFavoriteStatus] = useState(false);
-
-  const addfavoriteHandler = (id) => {
-    console.log(id);
-    localStorage.setItem(
-      "animeFavorite",
-      JSON.stringify(dataset.filter((animeID) => animeID.id === id)[0])
-    );
-  };
-
-  const deletefavoriteHandler = (id) => {
-    console.log(id);
-  };
-
   if (localStorage.getItem("animeFavorite")) {
     console.log(JSON.parse(localStorage.getItem("animeFavorite")));
   }
@@ -41,16 +26,18 @@ function Cards({
             ) : null}
             <img src={data.img_url} alt={data.title} />
             <div className="cards-content">
-              <h3>{data.title}</h3>
+              <h3>
+                {data.title.length > 20
+                  ? data.title.slice(0, 20) + "..."
+                  : data.title}
+              </h3>
               <div className="cards-icon">
                 {favorite && (
                   <button className="cards-favorite-icon">
                     {localStorage.getItem("animeFavorite") ? (
-                      <BsHeartFill
-                        onClick={() => deletefavoriteHandler(data.id)}
-                      />
+                      <BsHeartFill />
                     ) : (
-                      <BsHeart onClick={() => addfavoriteHandler(data.id)} />
+                      <BsHeart />
                     )}
                   </button>
                 )}
