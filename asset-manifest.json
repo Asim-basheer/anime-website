@@ -1,14 +1,30 @@
 {
   "files": {
-    "main.css": "/anime-website/static/css/main.33391a64.css",
-    "main.js": "/anime-website/static/js/main.b367fd63.js",
+    "main.css": "/anime-website/static/css/main.8d9a6684.css",
+    "main.js": "/anime-website/static/js/main.96154fb8.js",
+    "static/css/307.2ea977c8.chunk.css": "/anime-website/static/css/307.2ea977c8.chunk.css",
+    "static/js/307.490ad939.chunk.js": "/anime-website/static/js/307.490ad939.chunk.js",
+    "static/css/900.2ea977c8.chunk.css": "/anime-website/static/css/900.2ea977c8.chunk.css",
+    "static/js/900.41ceb973.chunk.js": "/anime-website/static/js/900.41ceb973.chunk.js",
+    "static/css/430.2ea977c8.chunk.css": "/anime-website/static/css/430.2ea977c8.chunk.css",
+    "static/js/430.f1f80705.chunk.js": "/anime-website/static/js/430.f1f80705.chunk.js",
+    "static/css/516.2ea977c8.chunk.css": "/anime-website/static/css/516.2ea977c8.chunk.css",
+    "static/js/516.4c025761.chunk.js": "/anime-website/static/js/516.4c025761.chunk.js",
     "static/media/login&register.jpg": "/anime-website/static/media/login&register.3161c5592be15c09d135.jpg",
     "index.html": "/anime-website/index.html",
-    "main.33391a64.css.map": "/anime-website/static/css/main.33391a64.css.map",
-    "main.b367fd63.js.map": "/anime-website/static/js/main.b367fd63.js.map"
+    "main.8d9a6684.css.map": "/anime-website/static/css/main.8d9a6684.css.map",
+    "main.96154fb8.js.map": "/anime-website/static/js/main.96154fb8.js.map",
+    "307.2ea977c8.chunk.css.map": "/anime-website/static/css/307.2ea977c8.chunk.css.map",
+    "307.490ad939.chunk.js.map": "/anime-website/static/js/307.490ad939.chunk.js.map",
+    "900.2ea977c8.chunk.css.map": "/anime-website/static/css/900.2ea977c8.chunk.css.map",
+    "900.41ceb973.chunk.js.map": "/anime-website/static/js/900.41ceb973.chunk.js.map",
+    "430.2ea977c8.chunk.css.map": "/anime-website/static/css/430.2ea977c8.chunk.css.map",
+    "430.f1f80705.chunk.js.map": "/anime-website/static/js/430.f1f80705.chunk.js.map",
+    "516.2ea977c8.chunk.css.map": "/anime-website/static/css/516.2ea977c8.chunk.css.map",
+    "516.4c025761.chunk.js.map": "/anime-website/static/js/516.4c025761.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.33391a64.css",
-    "static/js/main.b367fd63.js"
+    "static/css/main.8d9a6684.css",
+    "static/js/main.96154fb8.js"
   ]
 }
