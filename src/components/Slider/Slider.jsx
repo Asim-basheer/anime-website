@@ -2,16 +2,15 @@ import { useState, useEffect } from "react";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { SliderData } from "./SliderData";
 import "./slider.scss";
-function Slider() {
+function Slider({ data = [] }) {
   const [current, setCurrent] = useState(0);
-
+  const lastFive = data.slice(data.length - 5, data.length);
   const nextAnime = () => {
-    setCurrent(current === SliderData.length - 1 ? 0 : current + 1);
+    setCurrent(current === lastFive.length - 1 ? 0 : current + 1);
   };
   const prvAnime = () => {
-    setCurrent(current === 0 ? SliderData.length - 1 : current - 1);
+    setCurrent(current === 0 ? lastFive.length - 1 : current - 1);
   };
 
   const bulletsHandler = (index) => {
@@ -20,14 +19,14 @@ function Slider() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent(current === SliderData.length - 1 ? 0 : current + 1);
+      setCurrent(current === lastFive.length - 1 ? 0 : current + 1);
     }, 5000);
     return () => clearInterval(interval);
-  }, [setCurrent, current]);
+  }, [setCurrent, current, lastFive]);
 
   return (
     <div className="slider">
-      {SliderData.map((data, index) => {
+      {lastFive.map((data, index) => {
         return (
           <div
             key={data.id}
@@ -65,7 +64,7 @@ function Slider() {
       })}
       <div className="slider-control">
         <div className="slider-bullets">
-          {SliderData.map((data, index) => {
+          {lastFive.map((data, index) => {
             return (
               <span
                 key={data.id}

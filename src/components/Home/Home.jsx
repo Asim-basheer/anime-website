@@ -5,7 +5,7 @@ function Home({ data }) {
   return (
     <section className="home">
       <div className="container">
-        <Slider />
+        <Slider data={data} />
         <Cards
           dataset={data.slice(0, 10)}
           sectionName="Top Anime"

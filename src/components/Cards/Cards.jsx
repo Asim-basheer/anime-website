@@ -14,10 +14,21 @@ function Cards({
 }) {
   const [favoriteStatus, setFavoriteStatus] = useState(false);
 
-  const favoriteStatusHandler = () => {
-    setFavoriteStatus(!favoriteStatus);
+  const addfavoriteHandler = (id) => {
+    console.log(id);
+    localStorage.setItem(
+      "animeFavorite",
+      JSON.stringify(dataset.filter((animeID) => animeID.id === id)[0])
+    );
   };
 
+  const deletefavoriteHandler = (id) => {
+    console.log(id);
+  };
+
+  if (localStorage.getItem("animeFavorite")) {
+    console.log(JSON.parse(localStorage.getItem("animeFavorite")));
+  }
   return (
     <section className="cards">
       <h2 className="cards-section-name">{sectionName}</h2>
@@ -33,11 +44,14 @@ function Cards({
               <h3>{data.title}</h3>
               <div className="cards-icon">
                 {favorite && (
-                  <button
-                    onClick={favoriteStatusHandler}
-                    className="cards-favorite-icon"
-                  >
-                    {favoriteStatus ? <BsHeartFill /> : <BsHeart />}
+                  <button className="cards-favorite-icon">
+                    {localStorage.getItem("animeFavorite") ? (
+                      <BsHeartFill
+                        onClick={() => deletefavoriteHandler(data.id)}
+                      />
+                    ) : (
+                      <BsHeart onClick={() => addfavoriteHandler(data.id)} />
+                    )}
                   </button>
                 )}
                 <Link to={`/details/${data.id}`} className="cards-play-icon">

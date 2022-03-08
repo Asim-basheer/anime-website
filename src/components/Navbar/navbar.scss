@@ -2,6 +2,16 @@
 
 header {
   text-transform: capitalize;
+  .change-active-to-false {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
   .container {
     .navbar {
       display: flex;

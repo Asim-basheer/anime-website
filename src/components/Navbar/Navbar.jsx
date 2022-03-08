@@ -13,6 +13,10 @@ function Navbar() {
     setActive(!active);
   };
 
+  const changeActiveToFalse = () => {
+    setActive(false);
+  };
+
   const links = [
     {
       key: "",
@@ -34,6 +38,12 @@ function Navbar() {
 
   return (
     <header>
+      <div
+        onClick={changeActiveToFalse}
+        className={
+          active ? "change-active-to-false active" : "change-active-to-false"
+        }
+      ></div>
       <div className="scroll-to" id="scroll-to"></div>
       <div className="container">
         <nav className="navbar">
