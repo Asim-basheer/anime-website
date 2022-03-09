@@ -1,23 +1,73 @@
-import { useParams } from "react-router-dom";
-function Details({ data }) {
-  const { id } = useParams();
+// import { useParams } from "react-router-dom";
+import Cards from "../Cards/Cards";
+import TopTen from "../TopTen/TopTen";
 
-  const animeDetails = data.filter((animeId) => Number(id) === animeId.id)[0];
+import "./details.scss";
+function Details({ data }) {
+  // const { id } = useParams();
+
+  // const animeDetails = data.filter((animeId) => Number(id) === animeId.id)[0];
 
   return (
     <section className="details">
       <div className="container">
         <div className="content">
           <div className="video">
-            <img src={animeDetails.img_url} alt="details" />
-            {/* <video width={320} height={240} controls>
-              <source src="https://youtu.be/tKApfSoDPgM" type="video/mp4" />
-              <source src="https://youtu.be/tKApfSoDPgM" type="video/ogg" />
-              Your browser does not support the video tag.
-            </video> */}
+            <iframe
+              width="560"
+              height="315"
+              src="//ok.ru/videoembed/3189305445082"
+              allow="autoplay"
+              frameBorder={0}
+              allowFullScreen
+              title="vedio"
+            ></iframe>
+          </div>
+          <div className="anime-details-control">
+            <div className="next-arrow">next</div>
+            <div className="prev-arrow">prev</div>
+          </div>
+          <div className="episodes">
+            <span className="episod">1</span>
+            <span className="episod">2</span>
+            <span className="episod">3</span>
+            <span className="episod">4</span>
+          </div>
+          <div className="anime-details">
+            <div className="img">
+              <img src="" alt="" />
+            </div>
+            <div className="anime-details-content">
+              <h2 className="anime-title">there is anime title here</h2>
+              <p className="anime-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Possimus ut omnis amet adipisci, nisi cum autem iure nobis esse
+                recusandae doloremque voluptatum facere sequi, molestiae odio
+                accusantium consectetur itaque fuga. Optio, amet assumenda.
+                Ducimus accusantium error, iste veniam incidunt nesciunt culpa
+                provident natus alias porro minima ratione eaque illum quas!
+              </p>
+              <div className="anime-details">
+                <span className="type">type: tv series</span>
+                <span className="studios">studios: Shin-Ei animation</span>
+                <span>date aired: jan 8, 2022</span>
+                <span>status: Currently Airing</span>
+                <span className="genre">
+                  genre: Comedy,Romance, slice of life
+                </span>
+                <span>scores: 8,36</span>
+                <span>premiered: winter 2022</span>
+                <span>duration: 24/min/ep</span>
+                <span>quality: HD</span>
+                <span>views: 144,590 </span>
+              </div>
+              <Cards dataset={data.slice(0, 10)} sectionName="suggestions" />
+            </div>
           </div>
         </div>
-        <div className="top-ten"></div>
+        <div className="top-ten">
+          <TopTen data={data.slice(0, 10)} />
+        </div>
       </div>
     </section>
   );

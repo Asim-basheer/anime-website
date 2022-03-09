@@ -1,5 +1,50 @@
 @import "../../style/main.scss";
 
 .details {
-  color: red;
+  .container {
+    display: flex;
+    gap: 20px;
+    .content {
+      flex: 1;
+      .video {
+        width: 100%;
+        iframe {
+          width: 100%;
+          min-height: 500px;
+        }
+      }
+      .anime-details-control {
+        .next-arrow {
+        }
+        .prev-arrow {
+        }
+      }
+      .episodes {
+        .episode {
+        }
+      }
+      .anime-details {
+        .img {
+          img {
+          }
+        }
+        .anime-details-content {
+          .anime-title {
+          }
+          .anime-description {
+          }
+          .anime-details {
+            .type {
+            }
+            .studios {
+            }
+            .genre {
+            }
+            span {
+            }
+          }
+        }
+      }
+    }
+  }
 }
