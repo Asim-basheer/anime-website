@@ -113,7 +113,7 @@ input:-webkit-autofill:active {
     background-color: $light-dark;
     color: $blue;
     @media (max-width: 767px) {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     &:hover {
       opacity: 0.8;

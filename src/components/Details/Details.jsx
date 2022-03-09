@@ -1,12 +1,12 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Cards from "../Cards/Cards";
 import TopTen from "../TopTen/TopTen";
 
 import "./details.scss";
 function Details({ data }) {
-  // const { id } = useParams();
+  const { id } = useParams();
 
-  // const animeDetails = data.filter((animeId) => Number(id) === animeId.id)[0];
+  const animeDetails = data.filter((animeId) => Number(id) === animeId.id)[0];
 
   return (
     <section className="details">
@@ -35,18 +35,11 @@ function Details({ data }) {
           </div>
           <div className="anime-details">
             <div className="img">
-              <img src="" alt="" />
+              <img src={animeDetails.img_url} alt="" />
             </div>
             <div className="anime-details-content">
-              <h2 className="anime-title">there is anime title here</h2>
-              <p className="anime-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Possimus ut omnis amet adipisci, nisi cum autem iure nobis esse
-                recusandae doloremque voluptatum facere sequi, molestiae odio
-                accusantium consectetur itaque fuga. Optio, amet assumenda.
-                Ducimus accusantium error, iste veniam incidunt nesciunt culpa
-                provident natus alias porro minima ratione eaque illum quas!
-              </p>
+              <h2 className="anime-title">{animeDetails.title}</h2>
+              <p className="anime-description">{animeDetails.discription}</p>
               <div className="anime-details">
                 <span className="type">type: tv series</span>
                 <span className="studios">studios: Shin-Ei animation</span>
