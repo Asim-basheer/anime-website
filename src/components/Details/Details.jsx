@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Cards from "../Cards/Cards";
 import TopTen from "../TopTen/TopTen";
-
+import { MdDoubleArrow } from "react-icons/md";
 import "./details.scss";
 function Details({ data }) {
   const { id } = useParams();
@@ -24,14 +24,18 @@ function Details({ data }) {
             ></iframe>
           </div>
           <div className="anime-details-control">
-            <div className="next-arrow">next</div>
-            <div className="prev-arrow">prev</div>
+            <button className="prev-arrow">
+              <MdDoubleArrow /> prev
+            </button>
+            <button className="next-arrow">
+              next <MdDoubleArrow />
+            </button>
           </div>
           <div className="episodes">
-            <span className="episod">1</span>
-            <span className="episod">2</span>
-            <span className="episod">3</span>
-            <span className="episod">4</span>
+            <span className="episode active">1</span>
+            <span className="episode">2</span>
+            <span className="episode">3</span>
+            <span className="episode">4</span>
           </div>
           <div className="anime-details">
             <div className="img">
@@ -41,12 +45,25 @@ function Details({ data }) {
               <h2 className="anime-title">{animeDetails.title}</h2>
               <p className="anime-description">{animeDetails.discription}</p>
               <div className="anime-details">
-                <span className="type">type: tv series</span>
-                <span className="studios">studios: Shin-Ei animation</span>
+                <span>
+                  type:
+                  <Link to={""} className="type">
+                    tv series
+                  </Link>
+                </span>
+                <span>
+                  studios:
+                  <Link className="studios" to={""}>
+                    shin-ei animation
+                  </Link>
+                </span>
                 <span>date aired: jan 8, 2022</span>
                 <span>status: Currently Airing</span>
-                <span className="genre">
-                  genre: Comedy,Romance, slice of life
+                <span>
+                  genre:
+                  <Link to={""} className="genre">
+                    comedy, romance, slice of life
+                  </Link>
                 </span>
                 <span>scores: 8,36</span>
                 <span>premiered: winter 2022</span>
@@ -54,13 +71,11 @@ function Details({ data }) {
                 <span>quality: HD</span>
                 <span>views: 144,590 </span>
               </div>
-              <Cards dataset={data.slice(0, 10)} sectionName="suggestions" />
             </div>
           </div>
+          <Cards dataset={data.slice(0, 10)} sectionName="suggestions" />
         </div>
-        <div className="top-ten">
-          <TopTen data={data.slice(0, 10)} />
-        </div>
+        <TopTen data={data.slice(0, 10)} />
       </div>
     </section>
   );
