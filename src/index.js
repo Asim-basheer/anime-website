@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="/anime-website">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
