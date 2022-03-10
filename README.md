@@ -1,5 +1,5 @@
-#this page was made from asim front-end developer
+### This page was made from asim front-end developer
 
-##I created this website to deal with my skills with react
+#### I created this website to deal with my skills with react
 
-###enjoy to use it as you wish :)
+#### Enjoy to use it as you wish :)
