@@ -8,6 +8,12 @@ function Details({ data }) {
 
   const animeDetails = data.filter((animeId) => Number(id) === animeId.id)[0];
 
+  let episodesArr = [];
+
+  for (let i = 0; i < animeDetails.episodes; i++) {
+    episodesArr.push(i + 1);
+  }
+
   return (
     <section className="details">
       <div className="container">
@@ -16,7 +22,7 @@ function Details({ data }) {
             <iframe
               width="560"
               height="315"
-              src="//ok.ru/videoembed/3189305445082"
+              src={animeDetails.video_url}
               allow="autoplay"
               frameBorder={0}
               allowFullScreen
@@ -32,10 +38,17 @@ function Details({ data }) {
             </button>
           </div>
           <div className="episodes">
-            <span className="episode active">1</span>
-            <span className="episode">2</span>
-            <span className="episode">3</span>
-            <span className="episode">4</span>
+            {episodesArr.map((_, i) => {
+              return (
+                <span
+                  key={i}
+                  className={i + 1 === 1 ? "episode active" : "episode"}
+                  title={`episode ${i + 1}`}
+                >
+                  {i + 1}
+                </span>
+              );
+            })}
           </div>
           <div className="anime-details">
             <div className="img">
@@ -48,28 +61,28 @@ function Details({ data }) {
                 <span>
                   type:
                   <Link to={""} className="type">
-                    tv series
+                    {animeDetails.type}
                   </Link>
                 </span>
                 <span>
                   studios:
                   <Link className="studios" to={""}>
-                    shin-ei animation
+                    {animeDetails.studio}
                   </Link>
                 </span>
-                <span>date aired: jan 8, 2022</span>
-                <span>status: Currently Airing</span>
+                <span>date aired: {animeDetails.data_aired}</span>
+                <span>status: {animeDetails.status}</span>
                 <span>
                   genre:
                   <Link to={""} className="genre">
-                    comedy, romance, slice of life
+                    {animeDetails.genre}
                   </Link>
                 </span>
-                <span>scores: 8,36</span>
-                <span>premiered: winter 2022</span>
-                <span>duration: 24/min/ep</span>
-                <span>quality: HD</span>
-                <span>views: 144,590 </span>
+                <span>scores: {animeDetails.score} </span>
+                <span>premiered: {animeDetails.premiered}</span>
+                <span>duration: {animeDetails.duration}</span>
+                <span>quality: {animeDetails.quality}</span>
+                <span>views: {animeDetails.views} </span>
               </div>
             </div>
           </div>

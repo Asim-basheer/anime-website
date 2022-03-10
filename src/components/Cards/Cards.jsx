@@ -11,9 +11,6 @@ function Cards({
   numberOfEpisodes = "",
   favorite = false,
 }) {
-  if (localStorage.getItem("animeFavorite")) {
-    console.log(JSON.parse(localStorage.getItem("animeFavorite")));
-  }
   return (
     <section className="cards">
       <h2 className="cards-section-name">{sectionName}</h2>
@@ -34,11 +31,7 @@ function Cards({
               <div className="cards-icon">
                 {favorite && (
                   <button className="cards-favorite-icon">
-                    {localStorage.getItem("animeFavorite") ? (
-                      <BsHeartFill />
-                    ) : (
-                      <BsHeart />
-                    )}
+                    {false ? <BsHeartFill /> : <BsHeart />}
                   </button>
                 )}
                 <Link to={`/details/${data.id}`} className="cards-play-icon">

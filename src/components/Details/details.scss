@@ -65,15 +65,17 @@
         }
       }
       .episodes {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
         gap: 0.5rem;
         padding: 0.5rem 0;
         font-family: "Orelega One", cursive;
         margin-bottom: 2rem;
         .episode {
           background-color: #1f1f1f;
-          display: block;
-          width: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           padding: 0.5rem 1.5rem;
           font-size: 1.1rem;
           cursor: pointer;
