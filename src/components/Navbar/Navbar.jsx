@@ -53,7 +53,11 @@ function Navbar() {
           <ul className={active ? "links active" : "links"}>
             {links.map((link) => (
               <li key={link.key} className="nav-item">
-                <NavLink to={link.key} className="nav-link">
+                <NavLink
+                  to={link.key}
+                  className="nav-link"
+                  onClick={changeActiveToFalse}
+                >
                   {link.value}
                 </NavLink>
               </li>
