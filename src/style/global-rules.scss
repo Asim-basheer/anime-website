@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: $dark;
+  color: $white;
+  font-family: "Orelega One", cursive;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+// container
+
+button {
+  background-color: transparent;
+  border: none;
+}
+.btn {
+  border-radius: 8px;
+  background-color: $blue;
+  color: $white;
+  transition: $transition;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $white !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+/*  small */
+@media (min-width: 577px) and (max-width: 767px) {
+  .container {
+    width: 540px;
+  }
+}
+
+/* medium */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 720px;
+  }
+}
+
+/* large */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 960px;
+  }
+}
+
+/* extra large */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+/* extra extra large */
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+.go-to-page {
+  min-height: calc(100vh - 160px);
+  position: relative;
+  a {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    transition: 0.3s;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: $light-dark;
+    color: $blue;
+    @media (max-width: 767px) {
+      font-size: 1rem;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.fixed-height {
+  min-height: calc(100vh - 256px);
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  position: relative;
+}

@@ -1,0 +1,92 @@
+@import "../../style/main.scss";
+@import url("https://fonts.googleapis.com/css2?family=Orelega+One&display=swap");
+
+.top-ten {
+  flex-basis: 25%;
+  background-color: $light-dark;
+  padding: 0.5rem;
+  border-radius: 8px;
+  height: fit-content;
+  .title-top-ten {
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    font-size: 1.3rem;
+    &::first-letter {
+      color: $blue;
+    }
+  }
+  .top-ten-container {
+    @media (max-width: $md) {
+      & {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 1rem;
+      }
+    }
+    @media (max-width: $sm) {
+      & {
+        grid-template-columns: auto;
+      }
+    }
+    .top {
+      @include glass-effect($light-dark);
+      > .top-ten-number {
+        color: $white;
+        border: 2px solid $red !important;
+        background-color: $red;
+      }
+      .box-content {
+        display: flex;
+        .content {
+          h3 {
+            color: $white;
+          }
+          p {
+            color: $red !important;
+          }
+        }
+      }
+    }
+    .container-top-ten {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 8px;
+      > .top-ten-number {
+        flex: 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $green;
+        flex-basis: 30px;
+        height: 30px;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-family: "Orelega One", cursive;
+      }
+      .box-content {
+        display: flex;
+        gap: 0.5rem;
+        img {
+          width: 75px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+        .content {
+          h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+          }
+          p {
+            font-size: 0.8rem;
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+}

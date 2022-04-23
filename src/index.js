@@ -1,14 +1,15 @@
-import { StrictMode } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import "./sass/main.scss";
+import ScrollToTop from "./components/ScrollToTop";
 
 ReactDOM.render(
-  <StrictMode>
-    <Router basename="/anime-site">
+  <React.StrictMode>
+    <Router basename="/anime-website">
+      <ScrollToTop />
       <App />
     </Router>
-  </StrictMode>,
+  </React.StrictMode>,
   document.getElementById("root")
 );
