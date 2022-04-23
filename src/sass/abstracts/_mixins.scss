@@ -1,0 +1,40 @@
+@mixin flexCenterItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 767px:      sm
+768px - 991px:    md
+900 - 1200px:   lg
+1800px + :      xl
+
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm {
+    @media only screen and (max-width: 47.9375em) {
+      @content;
+    } //767px
+  }
+  @if $breakpoint == md {
+    @media only screen and (max-width: 61.9375em) {
+      @content;
+    } //991px
+  }
+  @if $breakpoint == lg {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == xl {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}

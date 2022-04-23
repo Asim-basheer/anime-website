@@ -1,0 +1,13 @@
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(7px);
+  }
+
+  100% {
+    transform: translateX(3px);
+  }
+}
